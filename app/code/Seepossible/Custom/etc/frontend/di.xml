@@ -3,4 +3,18 @@
     <type name="Magento\Catalog\Model\Product">
          <plugin name="AfterGetName" type="Seepossible\Custom\Plugin\Magento\Catalog\Model\Product" sortOrder="1"/>
     </type>
+
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+       <arguments>
+           <argument name="configProviders" xsi:type="array">
+               <item name="cms_block_config_provider" xsi:type="object">Seepossible\Custom\Model\ConfigProvider</item>
+           </argument>
+       </arguments>
+   </type>
+   <type name="Seepossible\Custom\Model\ConfigProvider">
+       <arguments>
+           <argument name="customBlockId" xsi:type="string">checkout_custom_cms_block</argument>
+           <argument name="sidebarBlockId" xsi:type="string">checkout_sidebar_custom_cms_block</argument>
+       </arguments>
+   </type>
 </config>
