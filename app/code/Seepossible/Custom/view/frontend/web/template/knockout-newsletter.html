@@ -1,0 +1,23 @@
+<div class="component-wrapper">
+    <span data-bind="text: messageText, attr:{class: messageType} "></span>
+    <div class="field newsletter">
+        <div class="control">
+            <label for="newsletter">
+                <span class="label" data-bind="i18n: 'Sign Up for Our Newsletter:'">
+                </span>
+                <input name="email" type="email" id="newsletter"
+                       data-bind="attr:{placeholder: $t('Enter your email address')}, value: customerEmail"
+                       data-mage-init='{"mage/trim-input":{}}'
+                       data-validate="{required:true, 'validate-email':true}"
+                />
+            </label>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="action subscribe primary"
+                data-bind="attr:{title: $t('Subscribe')}, click: Subscribe"
+                aria-label="Subscribe">
+            <span><span data-bind="i18n: 'Subscribe'"></span></span>
+        </button>
+    </div>
+</div>

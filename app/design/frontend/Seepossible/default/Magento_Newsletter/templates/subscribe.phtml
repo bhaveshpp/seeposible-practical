@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <div id="newsletter-component" data-bind="scope:'newslettercomponent'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <script type="text/x-magento-init">
+            {
+                "#newsletter-component": {
+                    "Magento_Ui/js/core/app": {
+                    "components": {
+                            "newslettercomponent": {
+                                "component": "Seepossible_Custom/js/newsletter-component"
+                            }
+                        }
+                    }
+                }
+            }
+            </script>
+        </div>
+    </div>
+</div>
